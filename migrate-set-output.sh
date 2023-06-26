@@ -17,14 +17,12 @@ fi
 # check if the directory exists
 if [ ! -d "$1" ]
 then
-  echo "Directory $1 does not exists"
+  echo "Directory $1 does not exist"
   exit 1
 fi
 
 # discover all yml or yaml files of the directory that are inside .github
 files=$(find "$1" -type f -name "*.yml" -o -name "*.yaml" | grep ".github")
-
-# for each file, launch setOutputDeprecation.py
 
 for file in $files
 do
